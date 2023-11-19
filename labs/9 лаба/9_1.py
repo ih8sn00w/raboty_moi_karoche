@@ -15,7 +15,7 @@ a = []
 for j in range(len(d)):
     row = []
     for k in range(len(f)):
-        row.append(math.sin(d[j] + f[k]))
+        row.append(round(math.sin(d[j] + f[k]), 3))
     a.append(row)
 
 print(a)
@@ -35,4 +35,4 @@ for row in a:
 
 print("Матрица A: ")
 for i in range(len(a)):
-    print(*a[i], AV[i], L[i])
+    print(f"{a[i]}, {AV[i]:.2g}, {L[i]}")

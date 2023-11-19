@@ -2,6 +2,9 @@
 Кучмистый Антон Романович  ИУ7-11Б
 Лабораторная работа №9 (5)
 """
+
+from string import ascii_uppercase
+
 matrix = []
 while True:
     # Запрашиваем ввод элемента строки
@@ -20,9 +23,13 @@ while True:
 print("Исходная матрица:")
 for row in matrix:
     print(*row)
+key = {
+    'asd': 1,
+    'dsa': 2
+}
 
 # Замена гласных на точки
-dictionary = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']
+dictionary = {'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'}
 
 for i in range(len(matrix)):
     for j in range(len(matrix[i])):
