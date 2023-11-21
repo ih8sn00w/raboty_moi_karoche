@@ -9,8 +9,8 @@ s_counter = 0
 
 heart_points = 3
 
-def main() -> None:
 
+def main() -> None:
     egg().field_change()
 
     print(f"--------------------------------")
@@ -38,6 +38,7 @@ def main() -> None:
         print(f" *    *  ******  *  *  *  ******     *    *     *  *   ******  ****   ")
         print(f" *    *  *    *  *     *  *          *    *      * *   *       *  *   ")
         print(f"  ****   *    *  *     *  ******      ****        **   ******  *    * ")
+        input()
         exit()
 
     heart_string = heart_points * "♥️"
