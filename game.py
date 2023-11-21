@@ -7,8 +7,10 @@ score = 0
 
 s_counter = 0
 
+heart_points = 3
 
 def main() -> None:
+
     egg().field_change()
 
     print(f"--------------------------------")
@@ -26,7 +28,21 @@ def main() -> None:
 
     wolf().change_position()
     egg().egg_move()
-    print(f"\nВаш счёт: {score}\n")
+
+    print(f"\n\n\n\nВаш счёт: {score}\n")
+
+    if heart_points == 0:
+        print(f"  ****    ***    *     *  ******      ****   *     *   ******  ****   ")
+        print(f" *       *    *  **   **  *          *    *   *    *   *       *   *  ")
+        print(f" *  **   *    *  * * * *  *          *    *    *   *   *       *   *  ")
+        print(f" *    *  ******  *  *  *  ******     *    *     *  *   ******  ****   ")
+        print(f" *    *  *    *  *     *  *          *    *      * *   *       *  *   ")
+        print(f"  ****   *    *  *     *  ******      ****        **   ******  *    * ")
+        exit()
+
+    heart_string = heart_points * "♥️"
+    print(f"У вас осталось жизней: {heart_string}")
+
     main()
 
 
@@ -56,7 +72,7 @@ class egg(object):
 
     def upper_left(self) -> None:
 
-        global score
+        global score, heart_points
 
         if any(E[i] == "O" for i in range(4)):
 
@@ -69,6 +85,8 @@ class egg(object):
             elif E[3] == "O" and W[0] != "W":
                 print("Ну почти, старайся лучше")
                 E[3] = "*"
+
+                heart_points -= 1
 
             if E[2] == "O":
                 E[3] = "O"
@@ -84,7 +102,7 @@ class egg(object):
 
     def upper_right(self) -> None:
 
-        global score
+        global score, heart_points
 
         if any(E[i] == "O" for i in range(8, 12)):
 
@@ -97,6 +115,8 @@ class egg(object):
             elif E[11] == "O" and W[1] != "W":
                 print("Ну почти, старайся лучше")
                 E[11] = "*"
+
+                heart_points -= 1
 
             if E[10] == "O":
                 E[11] = "O"
@@ -112,7 +132,7 @@ class egg(object):
 
     def lower_left(self) -> None:
 
-        global score
+        global score, heart_points
 
         if any(E[i] == "O" for i in range(4, 8)):
 
@@ -125,6 +145,8 @@ class egg(object):
             elif E[7] == "O" and W[2] != "W":
                 print("Ну почти, старайся лучше")
                 E[7] = "*"
+
+                heart_points -= 1
 
             if E[6] == "O":
                 E[7] = "O"
@@ -140,7 +162,7 @@ class egg(object):
 
     def lower_right(self) -> None:
 
-        global score
+        global score, heart_points
 
         if any(E[i] == "O" for i in range(12, 16)):
 
@@ -153,6 +175,8 @@ class egg(object):
             elif E[15] == "O" and W[3] != "W":
                 print("Ну почти, старайся лучше")
                 E[15] = "*"
+
+                heart_points -= 1
 
             if E[14] == "O":
                 E[15] = "O"
