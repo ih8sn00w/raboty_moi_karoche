@@ -32,7 +32,6 @@ def function(prompt):
 
 # 1 способ 1 колличество разбиений
 
-
 def dunc(end_pose, start_pose, count_1):
     q = 0
     for i in range(count_1):
