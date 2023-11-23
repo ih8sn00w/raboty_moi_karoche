@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
+
 root = Tk()
 root.title("TIC-TAC-TOE")
 root.geometry("500x550")  # Немного увеличил высоту, чтобы вместить метку сообщения
